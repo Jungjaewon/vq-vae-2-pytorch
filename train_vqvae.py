@@ -86,10 +86,13 @@ def main(args):
         ]
     )
 
+    print('before')
     dataset = datasets.ImageFolder(args.path, transform=transform)
     loader = DataLoader(
         dataset, batch_size=128, shuffle=True, num_workers=2
     )
+
+    print('after')
 
     model = VQVAE().to(device)
 
