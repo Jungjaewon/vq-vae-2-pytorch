@@ -24,7 +24,6 @@ def train(epoch, loader, model, optimizer, scheduler, device):
 
     for i, (img, label) in enumerate(loader):
 
-        print('sdsdsd')
         model.zero_grad()
 
         img = img.to(device)
@@ -82,8 +81,7 @@ def main(args):
 
     dataset = datasets.ImageFolder(args.path, transform=transform)
     loader = DataLoader(
-        dataset, batch_size=128, shuffle=True, num_workers=2
-    )
+        dataset, batch_size=256, shuffle=True, num_workers=8)
 
     model = VQVAE().to(device)
 
@@ -99,7 +97,6 @@ def main(args):
         )
 
     for i in tqdm(range(args.epoch)):
-        print(f'i : {i}')
         train(i, loader, model, optimizer, scheduler, device)
 
         if (i + 1) % 50 == 0:
