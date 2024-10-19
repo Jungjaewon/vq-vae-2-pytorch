@@ -72,7 +72,7 @@ def train(epoch, loader, model, optimizer, scheduler, device):
 def main(args):
     # Specify GPU by number
     if torch.cuda.is_available():
-        torch.cuda.set_device(args.gpu)
+        #torch.cuda.set_device(args.gpu)
         device = f"cuda:{args.gpu}"
     else:
         device = "cpu"
