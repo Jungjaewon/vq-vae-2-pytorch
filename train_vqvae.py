@@ -143,7 +143,7 @@ if __name__ == "__main__":
     parser.add_argument("--epoch", type=int, default=1000)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--sched", type=str)
-    parser.add_argument("--path", type=str, default="polyvore_train")
+    parser.add_argument("--path", type=str, default="polyvore/train")
 
     args = parser.parse_args()
 
