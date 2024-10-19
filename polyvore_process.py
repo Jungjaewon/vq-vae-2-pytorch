@@ -24,7 +24,7 @@ def write_polydataset(mode):
             assert len(base_list) == 4
             dataset.append([outfit_path, t_idx, base_list])
 
-    with open('outfitdata_set3_tagged.plk', 'rb') as fp:
+    with open('../deep_fashion_desinger_last/outfitdata_set3_tagged.plk', 'rb') as fp:
         tagged_dict = pickle.load(fp)[mode]
 
     for outfit_path, t_idx, base_list in dataset:
