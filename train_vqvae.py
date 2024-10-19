@@ -104,10 +104,11 @@ def main(args):
             warmup_proportion=0.05,
         )
 
-    for i in range(args.epoch):
+    for i in tqdm(range(args.epoch)):
         train(i, loader, model, optimizer, scheduler, device)
 
-        torch.save(model.state_dict(), f"checkpoint/vqvae_{str(i + 1).zfill(3)}.pt")
+        if (i + 1) % 50 == 0:
+            torch.save(model.state_dict(), f"checkpoint/vqvae_{str(i + 1).zfill(3)}.pt")
 
 
 if __name__ == "__main__":
