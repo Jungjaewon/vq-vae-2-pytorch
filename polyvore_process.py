@@ -32,12 +32,12 @@ def write_polydataset(mode):
         source_img_list, outfit_id = list(), osp.basename(outfit_path)
         t_cat = tagged_dict[f'{outfit_id}_{str(t_idx)}']['cate_idx']
 
-        cat_dir = osp.join(target_dir, t_cat)
+        cat_dir = osp.join(target_dir, str(t_cat))
         os.makedirs(cat_dir, exist_ok=True)
 
         print(f'outfit_path : {outfit_path}')
         target_path = osp.join(outfit_path, f'{t_idx}.jpg')
-        shutil.copy(target_path, osp.join(cat_dir, osp.basename(target_path)))
+        shutil.copy(target_path, osp.join(cat_dir, f'{outfit_id}_{str(t_idx)}.jpg'))
 
 
 
