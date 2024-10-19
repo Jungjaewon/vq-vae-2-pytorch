@@ -99,6 +99,7 @@ def main(args):
         )
 
     for i in tqdm(range(args.epoch)):
+        print(f'i : {i}')
         train(i, loader, model, optimizer, scheduler, device)
 
         if (i + 1) % 50 == 0:
