@@ -130,7 +130,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--n_gpu", type=int, default=1)
+    parser.add_argument("--n_gpu", type=int, default=4)
 
     port = (
         2 ** 15
@@ -140,10 +140,10 @@ if __name__ == "__main__":
     parser.add_argument("--dist_url", default=f"tcp://127.0.0.1:{port}")
 
     parser.add_argument("--size", type=int, default=256)
-    parser.add_argument("--epoch", type=int, default=560)
+    parser.add_argument("--epoch", type=int, default=1000)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--sched", type=str)
-    parser.add_argument("path", type=str)
+    parser.add_argument("--path", type=str, default="polyvore_train")
 
     args = parser.parse_args()
 
